@@ -16,11 +16,11 @@
               <span class="page-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
               <div>
                 <p class="eyebrow mb-1">Management</p>
-                <h1 class="h3 mb-1">Users</h1>
-                <p class="text-muted mb-0">Review accounts, roles, account status, and team ownership.</p>
+                <h1 class="h3 mb-1">Role</h1>
+                <p class="text-muted mb-0">Manage Role's</p>
               </div>
             </div>
-            <div class="heading-actions"><a class="btn btn-outline-secondary btn-sm" href="tables.html"><i class="bi bi-download" aria-hidden="true"></i> Export</a><a class="btn btn-primary btn-sm" href="{{ route('user.add') }}"><i class="bi bi-person-plus" aria-hidden="true"></i> Add User</a></div>
+            <div class="heading-actions"><a class="btn btn-outline-secondary btn-sm" href="tables.html"><i class="bi bi-download" aria-hidden="true"></i> Export</a><a class="btn btn-primary btn-sm" href="{{ route('role.add') }}"><i class="bi bi-person-plus" aria-hidden="true"></i> Add Role</a></div>
           </div>
 
           <section class="row g-3 mt-1" aria-label="User summary">
@@ -84,12 +84,11 @@
           <section class="panel mt-3">
             <div class="panel-header">
               <div>
-                <h2 class="h5 mb-1 section-title"><i class="bi bi-table" aria-hidden="true"></i><span>User List</span></h2>
+                <h2 class="h5 mb-1 section-title"><i class="bi bi-table" aria-hidden="true"></i><span>Role List</span></h2>
                 <p class="text-muted mb-0">Search, review, and manage team member accounts.</p>
               </div>
               <div class="d-flex flex-wrap gap-2">
-                <input class="form-control form-control-sm table-search" type="search" placeholder="Search users" data-table-search="usersTable" aria-label="Search users">
-                <a class="btn btn-primary btn-sm" href="{{ route('user.add') }}"><i class="bi bi-person-plus" aria-hidden="true"></i> Add User</a>
+                <a class="btn btn-primary btn-sm" href="{{ route('role.add') }}"><i class="bi bi-person-plus" aria-hidden="true"></i> Add Role</a>
               </div>
             </div>
             <div class="table-responsive">
