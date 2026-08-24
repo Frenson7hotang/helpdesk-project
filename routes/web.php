@@ -21,3 +21,4 @@ Route::get('/dept/add', [DeptController::class, 'add'])->name('dept.add');
 //Role route
 Route::get('/role/dashboard', [RoleController::class, 'index'])->name('role.dashboard');
 Route::get('/role/add', [RoleController::class, 'add'])->name('role.add');
+Route::post('simpan-role', [RoleController::class, 'simpan'])->name('simpan-role');

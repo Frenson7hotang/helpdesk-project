@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tb_role', function (Blueprint $table) {
-            $table->id();
+            $table->string('id', 10)->primary();
+            $table->string('name');
             $table->timestamps();
         });
     }

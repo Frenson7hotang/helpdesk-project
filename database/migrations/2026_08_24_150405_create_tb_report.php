@@ -11,9 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_departement', function (Blueprint $table) {
+        Schema::create('tb_report', function (Blueprint $table) {
             $table->id()->primary();
+            $table->string('nama');
+            $table->string('nik');
             $table->string('dept');
+            $table->date('tanggal');
+            $table->string('laporan');
+            $table->string('dept_tujuan');
+            $table->integer('no_hp');
             $table->timestamps();
         });
     }
@@ -23,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_departement');
+        Schema::dropIfExists('tb_report');
     }
 };

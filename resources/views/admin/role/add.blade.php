@@ -25,18 +25,14 @@
 
           <section class="row g-3">
             <div class="col-12 col-xl-12">
-              <form class="panel needs-validation" novalidate>
-                <div class="panel-header"><div><h2 class="h5 mb-1 section-title"><i class="bi bi-person-plus" aria-hidden="true"></i><span>Departement's Information</span></h2><p class="text-muted mb-0">Create a departement's account with validated fields.</p></div></div>
+                <div class="panel-header"><div><h2 class="h5 mb-1 section-title"><i class="bi bi-person-plus" aria-hidden="true"></i><span>Role's Information</span></h2><p class="text-muted mb-0">Create a role's.</p></div></div>  
+              <form action="{{ route('simpan-role') }}" method="post" class="panel needs-validation" novalidate>
+                @csrf
                 <div class="row g-3">
-                  <div class="col-md-6"><label class="form-label" for="firstName">First name</label><input class="form-control" id="firstName" type="text" required><div class="invalid-feedback">First name is required.</div></div>
-                  <div class="col-md-6"><label class="form-label" for="lastName">Last name</label><input class="form-control" id="lastName" type="text" required><div class="invalid-feedback">Last name is required.</div></div>
-                  <div class="col-md-6"><label class="form-label" for="email">Email</label><input class="form-control" id="email" type="email" required><div class="invalid-feedback">Enter a valid email.</div></div>
-                  <div class="col-md-6"><label class="form-label" for="phone">Phone</label><input class="form-control" id="phone" type="tel" required><div class="invalid-feedback">Phone number is required.</div></div>
-                  <div class="col-md-6"><label class="form-label" for="role">Role</label><select class="form-select" id="role" required><option value="">Choose role</option><option>Admin</option><option>Manager</option><option>Editor</option><option>Viewer</option></select><div class="invalid-feedback">Choose a role.</div></div>
-                  <div class="col-md-6"><label class="form-label" for="team">Team</label><select class="form-select" id="team" required><option value="">Choose team</option><option>Operations</option><option>Sales</option><option>Content</option><option>Finance</option></select><div class="invalid-feedback">Choose a team.</div></div>
-                  <div class="col-12"><label class="form-label" for="notes">Notes</label><textarea class="form-control" id="notes" rows="4" placeholder="Optional onboarding notes"></textarea></div>
+                  <div class="col-md-6"><label class="form-label" for="id">ID</label><input class="form-control" id="firstName" type="text" name='id' value="{{ $generatedId }}" readonly></div>
+                  <div class="col-md-6"><label class="form-label" for="name">Role/Posisi</label><input class="form-control" id="lastName" type="text" name='name' required><div class="invalid-feedback">Nama Departement Harus Diisi.</div></div>
                 </div>
-                <div class="d-flex flex-wrap justify-content-end gap-2 mt-4"><a class="btn btn-outline-secondary" href="users.html">Cancel</a><button class="btn btn-primary" type="submit"><i class="bi bi-person-check" aria-hidden="true"></i> Create User</button></div>
+                <div class="d-flex flex-wrap justify-content-end gap-2 mt-4"><a class="btn btn-outline-secondary" href="{{ route('role.dashboard') }}">Cancel</a><button class="btn btn-primary" type="submit"><i class="bi bi-person-check" aria-hidden="true"></i> Create Role</button></div>
               </form>
             </div>
           </section>
