@@ -25,8 +25,7 @@
           </div>
 
           <section class="row g-3">
-            <div class="col-12 col-xl-12">
-                <div class="panel-header"><div><h2 class="h5 mb-1 section-title"><i class="bi bi-person-plus" aria-hidden="true"></i><span>Role's Information</span></h2><p class="text-muted mb-0">Create a role's.</p></div></div>  
+            <div class="col-12 col-xl-12"> 
               <form action="{{ route('simpan-role') }}" method="post" class="panel needs-validation" novalidate>
                 @csrf
                 <div class="row g-3">
