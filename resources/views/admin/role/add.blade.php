@@ -1,4 +1,5 @@
 @include('admin.part.head')
+
 <body>
   <div class="admin-shell">
     <div class="sidebar-backdrop" data-sidebar-close></div>
@@ -29,8 +30,14 @@
               <form action="{{ route('simpan-role') }}" method="post" class="panel needs-validation" novalidate>
                 @csrf
                 <div class="row g-3">
-                  <div class="col-md-6"><label class="form-label" for="id">ID</label><input class="form-control" id="firstName" type="text" name='id' value="{{ $generatedId }}" readonly></div>
-                  <div class="col-md-6"><label class="form-label" for="name">Role/Posisi</label><input class="form-control" id="lastName" type="text" name='name' required><div class="invalid-feedback">Nama Departement Harus Diisi.</div></div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="id">ID</label>
+                    <input class="form-control" id="firstName" type="text" name='id' value="{{ $generatedId }}" readonly></div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="name">Role/Posisi</label>
+                    <input class="form-control" id="lastName" type="text" name='name' required>
+                    <div class="invalid-feedback">Posisi harus diisi.</div>
+                  </div>
                 </div>
                 <div class="d-flex flex-wrap justify-content-end gap-2 mt-4"><a class="btn btn-outline-secondary" href="{{ route('role.dashboard') }}">Cancel</a><button class="btn btn-primary" type="submit"><i class="bi bi-person-check" aria-hidden="true"></i> Create Role</button></div>
               </form>
@@ -38,18 +45,6 @@
           </section>
         </div>
       </main>
-
-      <footer class="admin-footer">
-        <div class="container-fluid px-3 px-lg-4">
-          <span>Copyright 2026 adminHMD. <br> Developed by <a target="_blank" class="fw-bold text-success" href="https://github.com/HasanMahmudDev">Md. Hasan Mahmud</a> • Distributed by <a target="_blank" class="fw-bold text-success" href="https://themewagon.com">ThemeWagon</a> </span>
-          <span>Professional dashboard template.</span>
-        </div>
-      </footer>
-    </div>
-  </div>
-
-<script src="{{ asset('template/assets/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('template/assets/js/main.js') }}"></script>
-
+@include('admin.part.foot')
 </body>
 </html>

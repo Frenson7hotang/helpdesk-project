@@ -22,3 +22,6 @@ Route::get('/dept/add', [DeptController::class, 'add'])->name('dept.add');
 Route::get('/role/dashboard', [RoleController::class, 'index'])->name('role.dashboard');
 Route::get('/role/add', [RoleController::class, 'add'])->name('role.add');
 Route::post('simpan-role', [RoleController::class, 'simpan'])->name('simpan-role');
+Route::get('edit-role/{id}', [RoleController::class, 'edit'])->name('role.edit');
+Route::put('update-role/{id}', [RoleController::class, 'update'])->name('role.update');
+Route::delete('hapus/role/{id}', [RoleController::class, 'hapus'])->name('role.delete');

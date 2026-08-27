@@ -10,7 +10,7 @@ class RoleModel extends Model
     protected $primaryKey = 'id';
     public $incrementing = false;
     protected $keyType = 'string';
-    public $timestamps = false;
+    public $timestamps = true;
      
     protected $fillable = [
      'id',
