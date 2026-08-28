@@ -69,16 +69,16 @@
                   <tr>
                     <td>{{ $key + 1 }}</td>
                     <td>{{ $d -> id }}</td>
-                    <td>{{ $d -> name }}</td>
+                    <td>{{ $d -> dept }}</td>
                     <td class="text-end">
-                      <form id="delete-form-{{ $d->id }}" action="{{ route('role.delete', $d->id) }}" method="POST" class="d-inline">
+                      <form id="delete-form-{{ $d->id }}" action="{{ route('dept.delete', $d->id) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')
-                        <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete('{{ $r->id }}')">
+                        <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete('{{ $d->id }}')">
                           <i class="bi bi-trash" aria-hidden="true"></i> Hapus
                         </button>
                       </form>
-                      <a class="btn btn-info btn-sm" href="{{ route('role.edit', $d->id) }}">
+                      <a class="btn btn-info btn-sm" href="{{ route('dept.edit', $d->id) }}">
                         <i class="bi bi-pencil" aria-hidden="true"></i>Edit</a>
                     </td>
                   </tr>

@@ -33,8 +33,8 @@
                     <label class="form-label" for="id">ID</label>
                     <input class="form-control" id="firstName" type="text" name='id' value="{{ $generatedId }}" readonly></div>
                   <div class="col-md-6">
-                    <label class="form-label" for="name">Role/Posisi</label>
-                    <input class="form-control" id="lastName" type="text" name='name' required>
+                    <label class="form-label" for="role">Role/Posisi</label>
+                    <input class="form-control" id="lastName" type="text" name='role' required>
                     <div class="invalid-feedback">Posisi harus diisi.</div>
                   </div>
                 </div>

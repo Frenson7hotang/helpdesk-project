@@ -34,15 +34,72 @@ class DeptController extends Controller
 
     if ($lastDept) {
         // Ambil angka dari string (misal: "RL001" -> ambil "001", di-cast ke integer jadi 1)
-        $lastNumber = (int) substr($lastDept->id, 2); 
+        $lastNumber = (int) substr($lastDept->id, 3); 
         $nextNumber = $lastNumber + 1;
     } else {
         $nextNumber = 1;
     }
 
     // Generate format ID baru (RL002)
-    $generatedId = 'DEPT' . str_pad($nextNumber, 3, '0', STR_PAD_LEFT);
+    $generatedId = 'DPT' . str_pad($nextNumber, 3, '0', STR_PAD_LEFT);
 
     return view('admin.dept.add', compact('generatedId'));
     }
+
+    public function simpan(Request $request)
+    {
+        try{
+            $validated = $request->validate([
+                'id'   => 'required',
+                'dept' => 'required',
+            ]);
+
+            DeptModel::create([
+                'id'=>$request->id,
+                'dept'=>$request->dept
+            ]);
+
+            return redirect()->route('dept.dashboard')->with('success', 'Departement Berhasil Disimpan.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Gagal Menyimpan Departement: ' . $e->getMessage());
+        }
+    }
+
+    public function edit($id)
+    {
+        $dept = DeptModel::findOrFail($id);
+        return view('admin.dept.edit', compact('dept'));
+    }
+
+    public function update($id)
+    {
+        $validated = request()->validate([
+            'id'   => 'required',
+            'dept' => 'required'
+        ]);
+
+        try {
+            $dept = DeptModel::findOrFail($id);
+            $dept->update([
+                'id'   => request('id'),
+                'dept' => request('dept')
+            ]);
+            return redirect()->route('dept.dashboard')->with('success', 'Data Berhasil Diupdate');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat mengupdate data: ' . $e->getMessage());
+        }
+    }
+
+    public function hapus($id)
+    {
+        try {
+            $dept = DeptModel::findOrFail($id);
+            $dept->delete();
+            
+            return redirect()->route('dept.dashboard')->with('success', 'Departement Berhasil Dihapus.');
+         } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Gagal Menghapus Departement: ' . $e->getMessage());
+        }
+    }
 }
+

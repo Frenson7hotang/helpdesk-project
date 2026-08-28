@@ -70,3 +70,24 @@
     });
   }
 </script>
+
+<script>
+    function previewImage(event) {
+        const input = event.target;
+        const preview = document.getElementById('imagePreview');
+
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block'; // Tampilkan gambar setelah di-load
+            }
+
+            reader.readAsDataURL(input.files[0]); // Baca file sebagai Data URL
+        } else {
+            preview.src = '#';
+            preview.style.display = 'none'; // Sembunyikan jika tidak ada file
+        }
+    }
+</script>

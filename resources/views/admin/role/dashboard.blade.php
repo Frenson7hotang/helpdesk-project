@@ -60,7 +60,7 @@
                   <tr>
                     <td>{{ $key + 1 }}</td>
                     <td>{{ $r -> id }}</td>
-                    <td>{{ $r -> name }}</td>
+                    <td>{{ $r -> role }}</td>
                     <td class="text-end">
                       <form id="delete-form-{{ $r->id }}" action="{{ route('role.delete', $r->id) }}" method="POST" class="d-inline">
                         @csrf

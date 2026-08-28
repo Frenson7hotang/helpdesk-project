@@ -16,4 +16,13 @@ class DeptModel extends Model
      'id',
      'dept',
     ];
+
+    public function dept()
+    {
+        return $this->hasMany(
+            UserModel::class,
+            'dept',
+            'id'  
+        );
+    }
 }

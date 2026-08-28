@@ -50,14 +50,14 @@ class RoleController extends Controller
     {
         $validated = $request->validate([
         'id'   => 'required',
-        'name' => 'required',
+        'role' => 'required',
         ]);
 
         try{
             
         RoleModel::create([
             'id'=>$request->id,
-            'name'=>$request->name
+            'role'=>$request->role
         ]);
         return redirect()->route('role.dashboard')->with('success', 'Data Berhasil Disimpan');
     } catch (\Exception $e) {
@@ -75,14 +75,14 @@ class RoleController extends Controller
     {
         $validated = request()->validate([
             'id'   => 'required',
-            'name' => 'required'
+            'role' => 'required'
         ]);
 
         try {
             $role = RoleModel::findOrFail($id);
             $role->update([
                 'id'   => request('id'),
-                'name' => request('name')
+                'role' => request('role')
             ]);
             return redirect()->route('role.dashboard')->with('success', 'Data Berhasil Diupdate');
         } catch (\Exception $e) {

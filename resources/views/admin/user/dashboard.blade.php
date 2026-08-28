@@ -94,7 +94,16 @@
             </div>
             <div class="table-responsive">
               <table class="table align-middle mb-0" id="usersTable" data-searchable-table>
-                <thead><tr><th scope="col">User</th><th scope="col">Role</th><th scope="col">Team</th><th scope="col">Status</th><th scope="col">Joined</th><th scope="col" class="text-end">Action</th></tr></thead>
+                <thead>
+                  <tr>
+                    <th scope="col">User</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Team</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Joined</th>
+                    <th scope="col" class="text-end">Action</th>
+                  </tr>
+                </thead>
                 <tbody>
                   <tr>
                     <td>
@@ -123,17 +132,7 @@
         </div>
       </main>
 
-      <footer class="admin-footer">
-        <div class="container-fluid px-3 px-lg-4">
-          <span>Copyright 2026 adminHMD. <br> Developed by <a target="_blank" class="fw-bold text-success" href="https://github.com/HasanMahmudDev">Md. Hasan Mahmud</a> • Distributed by <a target="_blank" class="fw-bold text-success" href="https://themewagon.com">ThemeWagon</a> </span>
-          <span>Professional dashboard template.</span>
-        </div>
-      </footer>
-    </div>
-  </div>
-
-<script src="{{ asset('template/assets/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('template/assets/js/main.js') }}"></script>
+@include('admin.part.foot')
 
 </body>
 </html>

@@ -37,7 +37,7 @@
                     <input class="form-control" id="firstName" type="text" name='id' value="{{ old('id', $role->id) }}" readonly></div>
                   <div class="col-md-6">
                     <label class="form-label" for="name">Role/Posisi</label>
-                    <input class="form-control" id="lastName" type="text" name='name' value="{{ old('name', $role->name) }}" required>
+                    <input class="form-control" id="lastName" type="text" name='role' value="{{ old('role', $role->role) }}" required>
                     <div class="invalid-feedback">Posisi harus diisi.</div>
                   </div>
                 </div>

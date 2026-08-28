@@ -10,7 +10,7 @@
       </div>
 
       <nav class="sidebar-nav">
-        <a class="nav-link active" href="{{ asset('template/html/index.html') }}" aria-current="page">
+        <a class="nav-link active" href="{{ route('admin.dashboard') }}" aria-current="page">
           <span class="nav-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span>
           <span class="nav-text">Dashboard</span>
         </a>
@@ -28,12 +28,6 @@
         </a>
       
       </nav>
-
-      <div class="sidebar-user">
-        <img class="avatar-img avatar-md sidebar-user-avatar" src="{{ asset('template/assets/images/avatar/avatar.jpg') }}" alt="Admin Hasan">
-        <strong>Admin Hasan</strong>
-        <small>Active Workspace</small>
-      </div>
 
       <div class="sidebar-footer">
         <span class="status-dot"></span>
