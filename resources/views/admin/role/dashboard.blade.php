@@ -62,6 +62,7 @@
                     <td>{{ $r -> id }}</td>
                     <td>{{ $r -> role }}</td>
                     <td class="text-end">
+                      <div class="d-flex justify-content-end gap-2">
                       <form id="delete-form-{{ $r->id }}" action="{{ route('role.delete', $r->id) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')

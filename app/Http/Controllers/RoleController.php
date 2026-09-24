@@ -13,7 +13,7 @@ class RoleController extends Controller
         $search = $request->input('search');
 
         $role = RoleModel::when($search, function ($query, $search) {
-                    return $query->where('name', 'like', "%{$search}%")
+                    return $query->where('role', 'like', "%{$search}%")
                                  ->orWhere('id', 'like', "%{$search}%"); // Bisa cari berdasarkan nama atau kode role
                 })
                 ->paginate($perPage)

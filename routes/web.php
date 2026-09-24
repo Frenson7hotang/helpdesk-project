@@ -14,6 +14,9 @@ Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.d
 Route::get('/user/dashboard', [UserController::class, 'index'])->name('user.dashboard');
 Route::get('/user/add', [UserController::class, 'add'])->name('user.add');
 Route::post('simpan-user', [UserController::class, 'simpan'])->name('simpan-user');
+Route::get('edit-user/{id}', [UserController::class, 'edit'])->name('user.edit');
+Route::put('update-user/{id}', [UserController::class, 'update'])->name('user.update');
+Route::delete('hapus/user/{id}', [UserController::class, 'hapus'])->name('user.delete');
 
 //Dept route
 Route::get('/dept/dashboard', [DeptController::class, 'index'])->name('dept.dashboard');

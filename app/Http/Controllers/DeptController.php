@@ -13,7 +13,7 @@ class DeptController extends Controller
         $search = $request->input('search');
 
         $dept = DeptModel::when($search, function ($query, $search) {
-                    return $query->where('name', 'like', "%{$search}%")
+                    return $query->where('dept', 'like', "%{$search}%")
                                  ->orWhere('id', 'like', "%{$search}%"); // Bisa cari berdasarkan nama atau kode role
                 })
                 ->paginate($perPage)

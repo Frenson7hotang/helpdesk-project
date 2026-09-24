@@ -10,7 +10,7 @@
       </div>
 
       <nav class="sidebar-nav">
-        <a class="nav-link active" href="{{ route('admin.dashboard') }}" aria-current="page">
+        <a class="nav-link" href="{{ route('admin.dashboard') }}" aria-current="page">
           <span class="nav-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span>
           <span class="nav-text">Dashboard</span>
         </a>

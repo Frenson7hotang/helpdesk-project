@@ -9,9 +9,24 @@ use App\Models\DeptModel;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('admin.user.dashboard');
+       $perPage = $request->input('perPage', 5);
+        $search = $request->input('search');
+
+        $user = UserModel::when($search, function ($query, $search) {
+                    return $query->where('nama', 'like', "%{$search}%")
+                                 ->orWhere('id', 'like', "%{$search}%"); // Bisa cari berdasarkan nama atau kode user
+                })
+                ->paginate($perPage)
+                ->appends(['perPage' => $perPage, 'search' => $search]);
+
+        return view('admin.user.dashboard', compact('user'));
+    }
+
+    public function boot(): void
+    {
+    Paginator::useBootstrapFive();
     }
 
     public function add()
